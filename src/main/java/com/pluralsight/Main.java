@@ -11,6 +11,7 @@ public class Main {
         String middleName;
         String lastName;
         String suffix;
+        String suffixComma = ", ";
 
         //inputs
         System.out.println("Welcome the the Full Name Generator. Please enter your first name: ");
@@ -28,9 +29,18 @@ public class Main {
         suffix = reader.nextLine();
        // reader.nextLine();
 
-        String fullName = firstName + " " + middleName + " " + lastName + " ," + suffix;
-       // if(fullName)
+        String fullName = firstName + " " + middleName + " " + lastName + suffixComma + suffix;
+
+        if(middleName.equals (" ")){
+            fullName = fullName.replaceAll(middleName, " ");
+        }
+
+      /*trying to format suffix the same one as middle name with mixed success :/
+       if(suffixComma.equals (" ")){
+            fullName = fullName.replaceAll(suffixComma, " ");
+        } */
 
         System.out.println("Full name: " + fullName);
+
     }
 }
